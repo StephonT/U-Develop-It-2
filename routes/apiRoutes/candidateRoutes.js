@@ -90,6 +90,7 @@ router.get("/candidates", (req, res) => {
   
     const sql = `UPDATE candidates SET party_id = ? 
                  WHERE id = ?`;
+    //req.body = what is being updated  req.params = who is being updated             
     const params = [req.body.party_id, req.params.id];
     db.query(sql, params, (err, result) => {
       if (err) {
